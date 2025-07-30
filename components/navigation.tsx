@@ -44,14 +44,15 @@ export const Navigation = () => {
     const isMobile = useMedia("(max-width: 1024px)", false);
 
     const onClick = (href: string) => {
-        router.push(href);
+        router.push(href); //redirects and manually closes the drawer
         setIsOpen(false);
     }
 
     if (isMobile) {
         return (
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                <SheetTrigger>
+                {/* idk if asChild works */}
+                <SheetTrigger asChild> 
                     <Button
                         variant="outline"
                         size="sm"
@@ -60,12 +61,23 @@ export const Navigation = () => {
                         <Menu className="size-4" />
                     </Button>
                 </SheetTrigger>
-                <SheetContent>
-                    
+                <SheetContent side="left" className="px-2">
+                    <nav className="flex flex-col gap-y-2 pt-10">
+                        {routes.map((route) => (
+                            <Button
+                                key={route.href}
+                                variant={route.href === pathname ? "secondary" : "ghost"}
+                                onClick={() => onClick(route.href)} //instead of link; this closes the drawer
+                                className="w-full justify-start"
+                            >
+                                {route.label}
+                            </Button>
+                        ))}
+                    </nav>
                 </SheetContent>
             </Sheet>
-        )
-    }
+        );
+    };
 
     return (
         <nav className="hidden lg:flex items-center gap-x-2 overflow-x-auto">
