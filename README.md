@@ -35,9 +35,13 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-https://bun.sh/
+Download bun from https://bun.sh/
+
 https://ui.shadcn.com/docs/installation/next
 https://clerk.com/docs/references/nextjs/clerk-middleware
 https://dashboard.clerk.com/
 https://clerk.com/docs/references/nextjs/custom-sign-in-or-up-page
 https://hono.dev/docs
+
+https://neon.com/ database connected with github
+bun add dotenv -D
