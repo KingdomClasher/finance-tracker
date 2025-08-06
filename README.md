@@ -50,3 +50,6 @@ https://orm.drizzle.team/docs/select#basic-select
 https://local.drizzle.studio/
 
 https://tanstack.com/query/latest/docs/framework/react/installation
+
+https://www.npmjs.com/package/@paralleldrive/cuid2/
+bun add @paralleldrive/cuid2
