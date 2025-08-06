@@ -45,3 +45,8 @@ https://hono.dev/docs
 
 https://neon.com/ database connected with github
 bun add dotenv -D
+
+https://orm.drizzle.team/docs/select#basic-select
+https://local.drizzle.studio/
+
+https://tanstack.com/query/latest/docs/framework/react/installation

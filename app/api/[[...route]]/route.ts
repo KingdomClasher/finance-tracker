@@ -1,19 +1,17 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
-// import authors from './authors'
-// import books from './books'
+
+import accounts from './accounts'
 
 export const runtime = 'edge'
 
-const app = new Hono().basePath('/api')
+const app = new Hono().basePath('/api');
 
-// app.route('/authors', authors)
-// app.route('/books', books)
-
-app.get('/hello', (c) => {
-  return c.json({ hello: 'World'})
-})
+const routes = app
+  .route('/accounts', accounts);
 
 // route handlers
 export const GET = handle(app) 
 export const POST = handle(app)
+
+export type AppType = typeof routes; //not properly having the route path
